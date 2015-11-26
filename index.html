@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html ng-app="GeocityApp">
+  <head>
+    <title>Christina</title>
+    <link rel="stylesheet" type="text/css" href="http://code.divshot.com/geo-bootstrap/swatch/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script type="text/javascript" src="http://code.divshot.com/geo-bootstrap/bootstrap/docs/assets/js/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+  </head>
+  <body>
+    <navbar class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">c H r I s T i N a</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </navbar>
+<br><br>
+
+    <main class="container" id="main">
+      <header class="jumbotron subhead" id="overview">
+        <div class="row">
+          <div class="span6">
+           <h1></h1>
+            <table cellpadding="2" cellspacing="2">
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="http://code.divshot.com/geo-bootstrap/img/test/notepad.gif">
+                  </td>
+                  <td>
+                    <img src="http://code.divshot.com/geo-bootstrap/img/test/wabwalk.gif">
+                  </td>
+                  <td>
+                    <button id="winner" class="btn btn-primary"> You're the lucky 999999999th visitor!</button>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </header>
+
+      <section id="about">
+        <div class="page-header">
+            <h1>About me</h1>
+        </div>
+        <h3>"How Can Mirrors Be Real If Our Eyes Aren't Real" - Jaden Smith</h4>
+        <p>I do things sometimes in <a href="http://dtr.meteor.com" target="_blank">DTR.</a><br/><a href="http://haoqizhang.com" target="_blank">Haoqi Zhang</a>, my professor, taught me everything I know about design and interfaces.<br/><br/>Plz leave me a note or secrets in the guestbook</p>
+        <center>
+          <!-- TRIPLE MC HAMMER -->
+          <img src="img/mchammer.gif">&nbsp;&nbsp;
+          <img src="img/mchammer.gif">&nbsp;&nbsp;
+          <img src="img/mchammer.gif">
+        </center>
+      </section>
+
+
+      <section id="guestbook" ng-controller="GuestbookController as gb">
+        <div class="page-header">
+            <h1>Guestbook <img src="http://code.divshot.com/geo-bootstrap/img/test/hot.gif"></h1>
+        </div>
+
+        <form class="form-horizontal well" id="guestNote">
+          <fieldset>
+            <div class="control-group">
+              <label class="control-label" for="name">Name</label>
+              <div class="controls">
+                <input name="name" type="text" class="input-xlarge" id="name">
+                <p class="help-block">Please leave me your name!</p>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="message">Message</label>
+              <div class="controls">
+                <textarea name="message" class="input-xlarge" id="message" rows="3"></textarea>
+              </div>
+            </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Save!</button>
+              <button id="secretButton" type="reset" class="btn">Cancel</button>
+            </div>
+          </fieldset>
+        </form>
+        <table class="table table-bordered table-striped table-hover">
+          <tbody>
+            <tr ng-repeat-start="entry in gb.entries">
+              <td colspan="2" style="border-top: 1px dotted #eee; border-bottom: 1px dotted #eee">
+                <b>Posted {{entry.date}}</b>
+              </td>
+            </tr>
+            <tr ng-repeat-end>
+              <td style="width: 150px">
+                <b>{{entry.name}}</b>
+              </td>
+              <td style="">{{entry.message}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="friends">
+        <div class="page-header">
+            <h1>Visit my super rad friends! <img src="http://code.divshot.com/geo-bootstrap/img/test/new2.gif"></h1>
+        </div>
+        <a target="_blank" href="http://users.eecs.northwestern.edu/~hcs063"> Visit Henry! </a>
+        <br/>
+        <a target="_blank" href="http://users.eecs.northwestern.edu/~scl025"> Visit Sarah! </a>
+        <br/>
+        <a target="_blank" href="http://users.eecs.northwestern.edu/~kjc004/"> Visti Kevin! </a>
+      </section>
+    </main>
+    <audio autoplay>
+      <source src="music/rick-roll-never-gonna-give-you-up.mp3" type="audio/mp3">
+    </audio>
+    <footer>
+      <center>
+        <img src="http://code.divshot.com/geo-bootstrap/img/test/counter2.gif">
+      </center>
+    </footer>
+  </body>
+
+</html>
